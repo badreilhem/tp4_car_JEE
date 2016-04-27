@@ -1,5 +1,6 @@
 package main.java.car.tp4;
 
+import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -20,7 +21,7 @@ public class Command {
 
 	public Command() {
         this.customer = "????";
-        this.books = null;
+        this.books = new HashSet<Entry<Book, Integer>>();
 	}
 
 	public Command(String customer, Set<Entry<Book, Integer>> books) {

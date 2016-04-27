@@ -18,8 +18,13 @@ public class ServiceInit extends HttpServlet{
 	@EJB
 	protected Library l;
 
+	@EJB
+	protected CommandList cl;
+	
 	public void doGet(HttpServletRequest req, HttpServletResponse rep) throws ServletException, IOException {
 		l.initBooks();
+		cl.initCommands();
+		
 		List<Book> books = l.getListBook();
 		req.setAttribute("books", books);
 		this.getServletContext().getRequestDispatcher("/init.jsp").forward(req, rep);

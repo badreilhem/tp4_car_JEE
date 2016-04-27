@@ -1,6 +1,9 @@
 package main.java.car.tp4;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
@@ -26,6 +29,21 @@ public class CommandList {
 		q.executeUpdate();
 		em.flush();
 		em.clear();
+	}
+	
+	public void initCommands() {
+		clear();
+		Map<Book, Integer> map = new HashMap<Book, Integer>();
+		map.put(new Book("dummy", "book", "12"), 2);
+		map.put(new Book("dummy2", "book2", "122"), 5);
+		
+		em.persist(new Command("customer1", map.entrySet()));
+		
+		map = new HashMap<Book, Integer>();
+		map.put(new Book("dummy4", "book3", "1222"), 25);
+		map.put(new Book("dummy7", "book4", "12233"), 5865614);
+		
+		em.persist(new Command("customer2", map.entrySet()));
 	}
 	
 	public List<Command> getListCommands() {

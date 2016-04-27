@@ -1,0 +1,3 @@
+0:0:0:0:0:0:0:1 - - [28/Apr/2016:00:00:48 +0200] "GET /addcommand.html HTTP/1.1" 200 430
+0:0:0:0:0:0:0:1 - - [28/Apr/2016:00:01:00 +0200] "GET /validate?customer=mymymym&author1=arez&title1=rez&year1=48&author2=fds&title2=fd&year2=65 HTTP/1.1" 200 3
+0:0:0:0:0:0:0:1 - - [28/Apr/2016:00:01:16 +0200] "GET /commands HTTP/1.1" 200 25

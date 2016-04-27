@@ -16,6 +16,14 @@ public class Cart {
 	public Cart() {
 		books = new HashMap<Book, Integer>();
 	}
+
+	public void setName(String name) {
+		this.customer = name;
+	}
+	
+	public String getName() {
+		return customer;
+	}
 	
 	public void addBook(Book book) {
 		if(books.containsKey(book)) {
