@@ -40,6 +40,19 @@ if(l != null) {
 	} else {
 		out.println("<h3>no book list found</h3>");
 	}
+	
+	out.println("<h2>Authors in Library</h2>");
+	
+	List<String> authors = l.getListAuthors();
+	if(authors != null) {
+		out.println("<ul>");
+		for(String a : authors) {
+		    out.println("<li>Author : "+a+"</li>");
+		}
+		out.println("</ul>");
+	} else {
+		out.println("<h3>no author found</h3>");
+	}
 } else {
    	out.println("<h3>No library found</h3>");
 }
