@@ -14,7 +14,7 @@ public class Starter extends HttpServlet {
 	protected Library l;
 	
 	public void init(ServletConfig config) {
-		l.initBooks();
+		l.init();
 		config.getServletContext().setAttribute("library", l);
 	}	
 	

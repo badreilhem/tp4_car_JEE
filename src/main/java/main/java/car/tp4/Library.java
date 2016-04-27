@@ -14,6 +14,7 @@ public class Library {
 	private EntityManager em;
 
 	public void init() {
+		clear();
 	}
 
 	public void add(Book book) {

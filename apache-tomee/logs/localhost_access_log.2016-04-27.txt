@@ -78,3 +78,14 @@
 127.0.0.1 - - [27/Apr/2016:18:42:33 +0200] "GET /form.jsp?author=moi&title=moi&year=moi HTTP/1.1" 200 983
 127.0.0.1 - - [27/Apr/2016:18:43:01 +0200] "GET /form.jsp?author=jg&title=jhf&year=lmkh HTTP/1.1" 200 1088
 127.0.0.1 - - [27/Apr/2016:18:43:11 +0200] "GET /form.jsp?author=n&title=jhf&year=lmkh HTTP/1.1" 200 1168
+127.0.0.1 - - [27/Apr/2016:19:00:12 +0200] "GET /form.jsp HTTP/1.1" 200 718
+127.0.0.1 - - [27/Apr/2016:19:09:39 +0200] "GET /authors.jsp HTTP/1.1" 200 25
+127.0.0.1 - - [27/Apr/2016:19:11:05 +0200] "GET /authors.jsp HTTP/1.1" 200 25
+127.0.0.1 - - [27/Apr/2016:19:11:09 +0200] "GET /authors HTTP/1.1" 404 1008
+127.0.0.1 - - [27/Apr/2016:19:11:45 +0200] "GET /authors HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2016:19:11:46 +0200] "GET /authors HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2016:19:13:33 +0200] "GET /authors HTTP/1.1" 200 28
+127.0.0.1 - - [27/Apr/2016:19:14:32 +0200] "GET /authors HTTP/1.1" 200 54
+127.0.0.1 - - [27/Apr/2016:19:22:11 +0200] "GET /authors HTTP/1.1" 200 31
+127.0.0.1 - - [27/Apr/2016:19:22:16 +0200] "GET /init HTTP/1.1" 500 3404
+127.0.0.1 - - [27/Apr/2016:19:22:32 +0200] "GET /init HTTP/1.1" 200 155
