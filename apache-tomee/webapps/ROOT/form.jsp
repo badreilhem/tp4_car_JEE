@@ -23,39 +23,6 @@ if ( author != null ) {
     }
 }
 
-if(l != null) {
-	out.println("<h2>Books in Library</h2>");
-	
-	List<Book> books = l.getListBook();
-	if(books != null) {
-		out.println("<ul>");
-		for(Book book : books) {
-			out.println("<li><ul>");
-		    out.println("<li>Title : "+book.getTitle()+"</li>");
-		    out.println("<li>Author : "+book.getAuthor()+"</li>");
-		    out.println("<li>Year : "+book.getYear()+"</li>");
-		    out.println("</ul></li>");
-		}
-		out.println("</ul>");
-	} else {
-		out.println("<h3>no book list found</h3>");
-	}
-	
-	out.println("<h2>Authors in Library</h2>");
-	
-	List<String> authors = l.getListAuthors();
-	if(authors != null) {
-		out.println("<ul>");
-		for(String a : authors) {
-		    out.println("<li>Author : "+a+"</li>");
-		}
-		out.println("</ul>");
-	} else {
-		out.println("<h3>no author found</h3>");
-	}
-} else {
-   	out.println("<h3>No library found</h3>");
-}
 %>
 
 <form action="form.jsp">
