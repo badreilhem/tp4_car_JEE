@@ -1,25 +1,28 @@
 package main.java.car.tp4;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.ejb.Stateful;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
-@Stateful
+@Stateless
 public class Library {
-	
-	protected List<Book> listBook;
-	
+
+	@PersistenceContext
+	private EntityManager em;
+
 	public void init() {
-		listBook = new ArrayList<Book>();
 	}
 
 	public void add(Book book) {
-		listBook.add(book);
+		em.persist(book);
 	}
 	
 	public List<Book> getListBook() {
-		return listBook;
+		Query q = em.createQuery("SELECT b FROM Book b");
+		List<Book> books = q.getResultList();
+		return books;
 	}
-	
 }

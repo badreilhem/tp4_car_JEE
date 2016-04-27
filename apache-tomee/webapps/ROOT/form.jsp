@@ -1,4 +1,6 @@
 <%@ page import="main.java.car.tp4.*"%>
+<%@ page import="java.util.List"%>
+
 <html>
 
 <%
@@ -24,15 +26,20 @@ if ( author != null ) {
 if(l != null) {
 	out.println("<h2>Books in Library</h2>");
 	
-	out.println("<ul>");
-	for(Book book : l.getListBook()) {
-		out.println("<li><ul>");
-	    out.println("<li>Title : "+book.getTitle()+"</li>");
-	    out.println("<li>Author : "+book.getAuthor()+"</li>");
-	    out.println("<li>Year : "+book.getYear()+"</li>");
-	    out.println("</ul></li>");
+	List<Book> books = l.getListBook();
+	if(books != null) {
+		out.println("<ul>");
+		for(Book book : books) {
+			out.println("<li><ul>");
+		    out.println("<li>Title : "+book.getTitle()+"</li>");
+		    out.println("<li>Author : "+book.getAuthor()+"</li>");
+		    out.println("<li>Year : "+book.getYear()+"</li>");
+		    out.println("</ul></li>");
+		}
+		out.println("</ul>");
+	} else {
+		out.println("<h3>no book list found</h3>");
 	}
-	out.println("</ul>");
 } else {
    	out.println("<h3>No library found</h3>");
 }
