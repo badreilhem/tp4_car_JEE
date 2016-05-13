@@ -1,6 +1,8 @@
 package main.java.car.tp4;
 
 import java.io.IOException;
+import java.util.Enumeration;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -16,28 +18,25 @@ import javax.servlet.http.HttpServletResponse;
 		) 
 public class ServiceListCommande extends HttpServlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+
 	@EJB
 	protected Library l;
-
+	
 	@EJB
 	protected CommandList cl;
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse rep) throws ServletException, IOException {
-		/*String name = req.getParameter("nom");
-		@SuppressWarnings("unused")
-		String mdp = req.getParameter("mdp");
-		
-		Panier p = new Panier(name);
-		l.initBooks();
-		//cl.initCommands();
-		List<Book> books = l.getListBook();
+		Enumeration<String> idsPanier = req.getAttributeNames();
+		String idPanier = idsPanier.nextElement();
+		String[] idsBook = req.getParameterValues(idPanier);
+		LinkedList books = new LinkedList<Book>();
+		for(String s : idsBook){
+			books.add(l.getBook(s));
+		}
+		cl.addListBook(books, idPanier);
 		req.setAttribute("books", books);
-		req.setAttribute("panier", p);
-		this.getServletContext().getRequestDispatcher("/selection.jsp").forward(req, rep);*/
+		this.getServletContext().getRequestDispatcher("/listcomande.jsp").forward(req, rep);
 	}
 
 }

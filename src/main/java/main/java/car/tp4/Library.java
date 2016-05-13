@@ -34,6 +34,12 @@ public class Library {
 		return books;
 	}
 	
+	public Book getBook(String s) {
+		Query q = em.createQuery("SELECT b FROM Book b WHERE b.id = "+s);
+		Book book = (Book) q.getSingleResult();
+		return book;
+	}
+	
 	public List<String> getListAuthors() {
 		Query q = em.createQuery("SELECT DISTINCT b.author FROM Book b");
 		List<String> authors = q.getResultList();

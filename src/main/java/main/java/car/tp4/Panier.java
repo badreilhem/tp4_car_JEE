@@ -2,20 +2,22 @@ package main.java.car.tp4;
 
 import java.util.LinkedList;
 import javax.persistence.Entity;
+import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PersistenceContext;
 
 @Entity
 public class Panier {
 
     @Id 
     @GeneratedValue(strategy=GenerationType.AUTO)
-    protected long id; 
+    protected Integer id; 
     protected String customer;
     protected LinkedList<Book> books;
 
-
+	
 	public Panier(String cost) {
         this.customer = cost;
         this.books = new LinkedList<Book>();
@@ -26,12 +28,13 @@ public class Panier {
         this.books = books;
 	}
 	
-
+	public Integer getId(){
+		return this.id;
+	}
 	public String getCustomer() {
 		return customer;
 	}
-//onclick=\" <% p.addBook(new Book(b.getAthor(), b.getTitle(), b.getYear())); %> \"
-
+	
 	public void setCustomer(String customer) {
 		this.customer = customer;
 	}

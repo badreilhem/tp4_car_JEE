@@ -32,7 +32,8 @@ public class ServiceSelection extends HttpServlet {
 		
 		Panier p = new Panier(name);
 		l.initBooks();
-		//cl.initCommands();
+		cl.initCommands();
+		cl.add(p);
 		List<Book> books = l.getListBook();
 		req.setAttribute("books", books);
 		req.setAttribute("panier", p);

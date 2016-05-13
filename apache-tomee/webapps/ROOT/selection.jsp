@@ -11,7 +11,11 @@
 	if(books != null && !books.isEmpty()) {
 		out.println("<form action=\"/listeCommande\" method=\"get\">");
 		for(Book b : books) {
-			out.println("<input type=\"checkbox\">" +"Le Livre : " + b.getTitle()+", de l\'auteur : "+b.getAuthor()+", de l\'année : "+b.getYear()+"<br>");
+			out.println("<input type=\"checkbox\" name=\""+p.getId().toString()+"\""
+			+"value=\""+b.getId().toString()+"\""
+			+">" 
+			+"Le Livre : " + b.getTitle()+", de l\'auteur : "+b.getAuthor()+
+			", de l\'année : "+b.getYear()+"<br>");
 		}
 		out.println("<input type=\"submit\" value=\"Confirme Commande\">");
 		out.println("</forme>");
