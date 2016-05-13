@@ -17,17 +17,21 @@ import javax.servlet.http.HttpServletResponse;
 		) 
 public class ServiceCommands extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@EJB
 	protected CommandList list;
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		List<Command> commands = list.getListCommands();
+	/*	List<Panier> commands = list.getListCommands();
 
 		PrintWriter out = response.getWriter();	
 		
 		
 		if(commands != null) {
-			for(Command command : commands) {
+			for(Panier command : commands) {
 				out.println(command.getCustomer());
 				if(command.getBooks() != null)
 					for(Entry<Book, Integer> book : command.getBooks()) {
@@ -36,7 +40,6 @@ public class ServiceCommands extends HttpServlet {
 			}
 		} else {
 			out.println("ko");
-		}
+		}*/
 	}
-
 }

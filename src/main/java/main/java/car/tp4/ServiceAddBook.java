@@ -1,8 +1,6 @@
 package main.java.car.tp4;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

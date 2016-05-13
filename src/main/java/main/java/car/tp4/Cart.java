@@ -47,12 +47,12 @@ public class Cart {
 	public Set<Entry<Book, Integer>> getBooks() {
 		return books.entrySet();
 	}
-	
-	public Command validateCommand() {
-		Command cmd = new Command(customer, getBooks()); 
+	/*
+	public Panier validateCommand() {
+		Panier cmd = new Panier(customer, getBooks()); 
 		books.clear();
 		return cmd;
 	}
-	
+	*/
 	
 }

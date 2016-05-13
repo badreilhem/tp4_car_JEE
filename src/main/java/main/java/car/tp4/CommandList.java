@@ -20,7 +20,7 @@ public class CommandList {
 		clear();
 	}
 	
-	public void add(Command command) {
+	public void add(Panier command) {
 		em.persist(command);
 	}
 	
@@ -30,25 +30,25 @@ public class CommandList {
 		em.flush();
 		em.clear();
 	}
-	
+	/*
 	public void initCommands() {
 		clear();
 		Map<Book, Integer> map = new HashMap<Book, Integer>();
 		map.put(new Book("dummy", "book", "12"), 2);
 		map.put(new Book("dummy2", "book2", "122"), 5);
 		
-		em.persist(new Command("customer1", map.entrySet()));
+		em.persist(new Panier("customer1", map.entrySet()));
 		
 		map = new HashMap<Book, Integer>();
 		map.put(new Book("dummy4", "book3", "1222"), 25);
 		map.put(new Book("dummy7", "book4", "12233"), 5865614);
 		
-		em.persist(new Command("customer2", map.entrySet()));
+		em.persist(new Panier("customer2", map.entrySet()));
 	}
 	
-	public List<Command> getListCommands() {
+	public List<Panier> getListCommands() {
 		Query q = em.createQuery("SELECT c FROM Command c");
-		List<Command> commands = q.getResultList();
+		List<Panier> commands = q.getResultList();
 		return commands;
 	}
 	
@@ -56,6 +56,6 @@ public class CommandList {
 		Query q = em.createQuery("SELECT DISTINCT c.customer FROM Command c");
 		List<String> customers = q.getResultList();
 		return customers;
-	}
+	}*/
 
 }

@@ -21,7 +21,7 @@ public class ServiceValidateCommand extends HttpServlet {
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		Command command = null;
+		Panier command = null;
 		
 		String customer = (String) request.getAttribute("customer");
 		cart.setName(customer);
@@ -36,14 +36,14 @@ public class ServiceValidateCommand extends HttpServlet {
 		year = (String) request.getAttribute("year2");
 		cart.addBook(new Book(author, title, year));
 		
-		command = cart.validateCommand();
+		/*command = cart.validateCommand();
 		
 		if(command != null) {
 			list.add(command);
 			response.getWriter().println("ok");
 		} else {
 			response.getWriter().println("ko");
-		}
+		}*/
 	}
 
 }
