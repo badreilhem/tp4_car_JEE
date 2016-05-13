@@ -17,4 +17,4 @@ TP4. JEE
 2.3. Les url pour tester : /init et /addbook
 2.4. L'url pour tester : /book
 2.5. L'url pour tester : /connexion.html
- 
+Le problème est dans la classe ServiceListCommand, dans le getParameterValues().
