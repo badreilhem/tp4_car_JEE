@@ -9,7 +9,7 @@
 	List<Book> books = (List<Book>) request.getAttribute("books");
 	Panier p = (Panier) request.getAttribute("panier");
 	if(books != null && !books.isEmpty()) {
-		out.println("<form action=\"/listeCommande\" method=\"get\">");
+		out.println("<form action=\"/listCommande\" method=\"get\">");
 		for(Book b : books) {
 			out.println("<input type=\"checkbox\" name=\""+p.getId().toString()+"\""
 			+"value=\""+b.getId().toString()+"\""

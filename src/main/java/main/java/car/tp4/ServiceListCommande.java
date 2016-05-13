@@ -36,7 +36,7 @@ public class ServiceListCommande extends HttpServlet {
 		}
 		cl.addListBook(books, idPanier);
 		req.setAttribute("books", books);
-		this.getServletContext().getRequestDispatcher("/listcomande.jsp").forward(req, rep);
+		this.getServletContext().getRequestDispatcher("/listcommande.jsp").forward(req, rep);
 	}
 
 }
